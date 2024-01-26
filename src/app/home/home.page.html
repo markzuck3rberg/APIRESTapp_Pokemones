@@ -1,20 +1,42 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>Pokédex</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content fullscreen = true>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <br>
+  <ion-title>ID_Item</ion-title>
+  <ion-input type="number" [(ngModel)]="itemid" placeholder="Nombre del Ítem"></ion-input>
+  <ion-button (click)="getItemData(itemid)">Buscar</ion-button>
+<div class="poke">
+  <ion-label> {{item.name}}</ion-label>
+  <ion-img [src]=item.sprites.default class="imgpoke"></ion-img>
+</div>
+<br>
+  <ion-title>NOMBRE_Item</ion-title>
+  <ion-input [(ngModel)]="itemid2" placeholder="Nombre del Ítem"></ion-input>
+  <ion-button (click)="getItemData2(itemid2)">Buscar</ion-button>
+<div class="poke">
+  <ion-label> {{item2.id}}</ion-label>
+  <ion-img [src]=item2.sprites.default class="imgpoke"></ion-img>
+</div>
+  <br>
+  <ion-title>ID_Pokemón</ion-title>
+  <ion-input  type="number" [(ngModel)]="name" placeholder="Nombre del Pokémon"></ion-input>
+  <ion-button (click)="getPokemonData(name)">Buscar</ion-button>
+<div class="poke">
+  <ion-label> {{pokemon.name}}</ion-label>
+  <ion-img [src]=pokemon.sprites.front_default class="imgpoke"></ion-img>
+</div>
+<br>
+  <ion-title>NOMBRE_Pokemón</ion-title>
+  <ion-input [(ngModel)]="name2" placeholder="Nombre del Pokémon"></ion-input>
+  <ion-button (click)="getPokemonData2(name2)">Buscar</ion-button>
+<div class="poke">
+  <ion-label> {{pokemon2.id}}</ion-label>
+  <ion-img [src]=pokemon2.sprites.front_default class="imgpoke"></ion-img>
+</div>
+
 </ion-content>
